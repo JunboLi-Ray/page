@@ -1,0 +1,5 @@
+Pg 磁盘
+
+relpages磁盘页面数
+reltuples 表行数
+select relpages,reltuples::int from pg_class where relname='device_identifiers_new';

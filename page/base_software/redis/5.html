@@ -1,0 +1,17 @@
+redis集群
+
+每个节点记住其它节点的nodeid，因为ip和端口会变
+
+创建集群：
+3 or 4，redis-trib.rb
+./redis-trib.rb create --replicas 1 127.0.0.1:7000 127.0.0.1:7001 \
+127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005
+
+5 及以上，redis-cli
+redis-cli --cluster create 127.0.0.1:7000 127.0.0.1:7001 \
+127.0.0.1:7002 127.0.0.1:7003 127.0.0.1:7004 127.0.0.1:7005 \
+--cluster-replicas 1
+
+
+
+https://redis.io/topics/cluster-tutorial

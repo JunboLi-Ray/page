@@ -1,0 +1,9 @@
+进入docker：
+方法1：#废弃 内容同步，且互相阻塞，docker attach --sig-proxy=false docker-files_srv.push.tt_1
+方法2：#不好 ssh
+方法3：nsenter
+1）docker inspect -f {{.State.Pid}} docker-files_srv.push.tt_1
+2）nsenter --target 13109 --mount --uts --ipc --net --pid
+或：
+脚本（nsenter）：docker-enter docker-files_srv.push.tt_1
+方法4：docker exec -it docker-files_srv.push.tt_1 /bin/sh

@@ -1,0 +1,51 @@
+Over 窗口函数
+
+语法
+只能在select和order by里使用
+OVER(PARTITION BY... ORDER BY...)
+
+解释：
+ORDER BY field:
+第一块值为field，的此列值为等于field本身的行运算
+第二块值为field，的此列值为等于field本身的和第一块的field的行运算
+。。。
+第n块值为field，的此列值为所有的行运算
+
+
+
+Old:
+with dep_avg_salary as (
+select dept_name as dept_name, avg(salary) as dep_avg_salary
+from emp_salary
+group by dept_name
+)
+select e.dept_name, e.emp_no, e.salary, das.dep_avg_salary
+from emp_salary e
+left join dep_avg_salary das on das.dept_name = e.dept_name
+order by e.dept_name
+
+New:
+SELECT dept_name,
+emp_no,
+salary,
+avg(salary) OVER (PARTITION BY dept_name)
+FROM emp_salary;
+
+
+
+复用：
+
+SELECT dept_name,
+emp_no,
+salary,
+avg(salary) OVER (PARTITION BY dept_name)
+max(salary) OVER (PARTITION BY dept_name)
+FROM emp_salary;
+
+SELECT dept_name,
+emp_no,
+salary,
+avg(salary) OVER win
+max(salary) OVER win
+FROM emp_salary
+window win as (PARTITION BY dept_name) ;

@@ -1,0 +1,42 @@
+遇到问题：
+
+treemap红黑树，按算法来，不是红黑树。
+初始的树就不是红黑树。
+
+sleep方法纳秒参数无用
+
+初始化类不能用多线程，且线程改变类内部成员。
+
+gc为什么不能混合使用，问过大家，因为标准。
+
+invalid chunk “” ignored错误，因为链接直接接&了
+
+static块内不能new线程访问类的static对象
+
+
+编码web开发用filter后，get由于tomcat 默认iso，所以要在container里设置。都对的时候，有时会是文件存储格式的问题。
+
+日志满了，nginx不能接受请求
+
+线程池用完记得shutdown
+
+redis sentinel选举可能有无法成功问题，环形到达数据包，各自选了一票。所以应该尽量少的sen。
+
+redis有密码主从复制提示ok，但还是看日志吧
+
+redis最好先configset密码再配置文件设密码
+
+没密码用jedis连验证密码会报错，可以trycatch。
+
+hashmap如果size设为1，1.6扩容，1.7没事。
+
+线程sleep或者block了，没有进入安全区域，如何gc，每次进去都标示进入安全区域。
+
+取开关，1000个string的set，结果刚启动导致map为null，大量线程取配置，导致gc严重，改成预加载。
+
+
+struct后面加汉子，返回json
+这个路径在json里，汉子变成乱码在request里，struct解析为null，执行默认execute方法，该方法返回success所以成功返回json。
+
+
+firefox type是hidden的除非强刷，否则不变值，可以autocomplete为off

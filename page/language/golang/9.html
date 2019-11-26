@@ -1,0 +1,18 @@
+Happen before
+
+* 在单线程环境下，所有的表达式，按照代码中的先后顺序，具有Happens Before关系。
+
+
+* 如果包P1中导入了包P2，则P2中的init函数Happens Before 所有P1中的操作
+* main函数Happens After 所有的init函数
+
+
+* Goroutine的创建Happens Before所有此Goroutine中的操作
+* Goroutine的销毁Happens After所有此Goroutine中的操作
+
+
+
+* 对一个元素的send操作Happens Before对应的 receive 完成操作
+* 对channel的close操作Happens Before receive 端的收到关闭通知操作
+* 对于Unbuffered Channel，对一个元素的receive 操作Happens Before对应的 send完成操作
+* 对于Buffered Channel，假设Channel 的buffer 大小为C，那么对第k个元素的receive操作，Happens Before第k+C个 send完成操作。

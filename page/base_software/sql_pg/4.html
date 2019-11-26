@@ -1,0 +1,16 @@
+查看表大小
+
+select pg_size_pretty(pg_relation_size('inter_ad_statistics'));
+
+创建用户
+create user lijunbo CONNECTION LIMIT 3 password 'dsfkl492owe8ifdsalkfiou';
+
+查看用户
+\du
+
+查看链接情况以及杀死链接
+select count(*) from pg_stat_activity;
+SELECT pg_terminate_backend(15278)
+
+\x
+竖着展示sql结果

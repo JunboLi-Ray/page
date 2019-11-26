@@ -1,0 +1,9 @@
+netty
+reactor模型
+bio
+用多个串行线程，替代多个并行线程，一个队列
+
+事件由channel到pipeline，再经历各个handler。
+
+
+netty通过创建的两个线程池，nioeventloopgroup的不同，可实现reactor的单线程，多线程，主从的实现。

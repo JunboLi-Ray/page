@@ -1,0 +1,55 @@
+坑
+
+1、for 用i不要改v，除非是指针
+
+2、
+a := []byte{“”}
+b := a[1:2]
+
+修改b，会影响a。
+可b:= a[1:2:2],控制b的cap，则使用新的
+
+3、
+type myLocker sync.Locker。因为interface继承方法
+type myMutex sync.Mutex。因为struct 没有继承方法
+
+4、要存一下，要不可能都一样
+data := []string{"one", "two", "three"}
+
+for _, v := range data {
+go func(v string) {
+fmt.Println(v)
+}(v)
+}
+
+5、defer在声明时求出值
+
+6、defer func结束执行，不在代码块
+可以新写一个匿名函数，用defer回收资源等
+
+7、防止插入channel 时go阻塞
+1、channel长度
+2、select {
+case c <- 1:
+default:
+}
+
+8、map 类型的元素不可寻址，可以把val放到一个对象再调用
+Todo ，未来会改的可以
+
+9、interface 类型的变量只有在类型和值均为 nil 时才为 nil
+var data *byte
+var in interface{}
+in = data
+fmt.Println(in, in == nil)   // <nil> false
+
+
+    10、runtime.Gosched()让其它go执行
+
+
+
+
+
+
+
+    https://segmentfault.com/a/1190000013739000

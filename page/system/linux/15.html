@@ -1,0 +1,34 @@
+linux启动过程
+
+加载内核文件到内存，内核解压缩
+
+执行内核，内核执行init程序，init读取/etc/inittab决定运行级别
+每个级别对应的运行脚本在/etc/rc.d/下
+
+
+
+一、
+编辑“/etc/rc.local”，把启动程序的shell命令输入进去即可（要输入命令的全路径），类似于windows下的“启动”。
+二、
+crontab -l 列出时间表；
+crontab -e编辑时间表；
+crontab -d删除时间表；
+三、
+和系统自带的服务一样启动。
+/etc/rc.d/init.d 下创建启动服务脚本类似：
+start() {
+        echo "Starting my process "
+        cd /opt
+        ./haha.sh
+}
+stop() {
+        killall haha.sh
+        echo "Stoped"
+}
+chkconfig --add 服务名称
+chkconfig -leve 启动级别 服务名 on
+（说明，3级别代表在命令行模式启动，5级别代表在图形界面启动，on表示开启）
+chkconfig -leve 启动级别 服务名 off
+
+如果要查看哪些服务被添加为系统服务可以使用命令 ：
+ntsysv （怎么是图形界面）或者chkconfig --list

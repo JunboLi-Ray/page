@@ -1,0 +1,20 @@
+linux io：
+（同步）看的是等待数据由内核拷贝到用户态阶段是否要等待
+1、阻塞io，
+2、非阻塞io，
+3、多路复用io，select、poll、epoll（事件）kqueue（功能不同的epoll）
+4、信号驱动io，
+5、异步io。
+
+多路复用io，selector是阻塞的，socket是非阻塞的，所以可以算异步非阻塞io
+多路复用io，也算同步非阻塞io，数据由内核到用户，还是要等待，socket是非阻塞
+Reactor模型，将多路复用包起来了
+select 因为数组，有大小限制的模型。
+poll连表，没有大小限制的select。
+epoll，有事件，回调。
+
+信号驱动io：回调的是通知io能用了，拷贝数据要同步。
+异步io：回调的是通知io能用且拷贝到缓冲区了。
+
+
+异步io：proactor

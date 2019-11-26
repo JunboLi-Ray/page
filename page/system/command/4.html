@@ -1,0 +1,22 @@
+指令
+
+linux 防火墙 添加端口
+
+iptables：
+iptables -A INTPUT -s 10.1.81.51 -p tcp --sport 6379 -j ACCEPT
+iptables -A OUTTPUT -d 10.1.81.51 -p tcp --dport 6379 -j ACCEPT
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+service iptables restart
+
+firewalld：
+systemctl stop firewalld
+firewall-cmd --permanent --add-port=6379/tcp
+firewall-cmd --reload
+
+
+mysql忘密码：
+/etc/my.cnf加上skip-grant-tables
+/etc/init.d/mysqld restart
+
+source
+cat /etc/profile

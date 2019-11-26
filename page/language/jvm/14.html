@@ -1,0 +1,13 @@
+cpu过高：
+查看进程里所有线程id
+ps -mp 进程id -o THREAD,tid,time
+线程id转16进制
+printf "%x" 线程id
+查看线程信息
+jstack 进程id | grep 16进制
+看gc情况
+jstat -gcutil 进程id 1000
+看状态信息
+jstat 进程id >>jstat.out
+根据运行状态找到位置
+===========================

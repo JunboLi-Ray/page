@@ -1,0 +1,5 @@
+dep ensure —update 。。。
+
+constraint 与 override 的区别
+dep 会如实得处理 constraint 类型的依赖，在这个例子中，尽管在 A 的依赖中将 C 的分支设置为 new_branch，但是在B项目中，引用的包还是依旧使用 master 分支 的代码。
+如果将A项目的 constraint 改为 override , 则会强制让 B 项目在拉取 C 项目的代码时，拉取的是 new_branch 分支上的代码，避免因为协同开发导致的问题。

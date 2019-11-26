@@ -1,0 +1,36 @@
+vpn
+
+vultr
+
+===============================
+
+
+方式1、ShadowSocks:
+
+服务端：
+yum install docker -y
+docker pull oddrationale/docker-shadowsocks
+
+docker run -d -p 2011:2011 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 2011 -k qwerasdf -m aes-256-cfb
+
+
+客户端:
+
+Mac
+下载客户端
+https://shadowsocks.org/en/download/clients.html
+
+iPhone
+切换app帐号下载ShadowSocks
+
+——————————————————————
+方式2、Openvpn:
+openvpn-openssl
+
+Mac
+Tunnelblick或者访问链接有下载推荐app
+
+iPhone
+切换app帐号下载OpenVPN Connect
+
+

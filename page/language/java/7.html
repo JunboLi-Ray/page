@@ -1,0 +1,17 @@
+阻塞队列
+
+阻塞添加和获取
+put
+take
+
+非阻塞添加和获取
+offer
+poll
+drainto（取所有）
+
+
+1、arrayblockqueue，添加和获取同一把锁，不能同时进行。
+2、linkedblockqueue，可设置最大长度。
+3、delayqunue，队列不限制长度，超过时间才能获取。
+4、priorityblockingqueue，根据参数优先级，不限制大小，注意内存。
+5、synchronousqueue，无缓冲队列，插入没人获取就等着。默认非公平lifo，公平fifo。

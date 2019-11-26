@@ -1,0 +1,9 @@
+转到其它链接
+proxpass：向后端转发请求。
+rewrite：
+一般后面带个break，不走后面请求。
+
+
+替换路径
+root：把请求拼接在root路径后。
+alias：理解是把location没写的部分拼接在alias后，或者说最后一个/后的拼接。事实是必须在location里匹配正则，并在alias里引用这个参数，不然不知道怎么对应。

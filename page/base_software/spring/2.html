@@ -1,0 +1,16 @@
+当 Web 应用集成 Spring 容器后，代表 Spring 容器的WebApplicationContext对象将以WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE
+为键存放在ServletContext的属性列表中。
+
+
+￼<img>
+
+方法调用
+
+继承servlet，重写了doget，dopost方法，都调用processRequest。
+processRequest:请求对象放到ThreadLocal对象里，doService，发布通知通知监听者。
+doService:request设置好初始化的全局变量等，doDispatch。
+doDispatch:获取HandlerExecutionChain,执行拦截器和方法。
+
+
+HttpMessageConverter的实现类，实现了输入输出流和java对象的转换。
+流为HttpInputMessage和HttpOutputMessage。

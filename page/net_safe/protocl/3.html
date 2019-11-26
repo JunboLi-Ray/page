@@ -1,0 +1,11 @@
+tls
+
+优化：
+Session Resumption，之前用过的密钥存起来，在浏览器，服务解密后和客户端一起复用。
+
+如何知道证书过期：
+CRL（Certificate Revocation List，证书撤销名单）和 OCSP（Online Certificate Status Protocol，在线证书状态协议）
+第一个结果集太大，第二个取不到结果会阻塞
+OCSP Stapling，服务端缓存结果并返回，有签名，无法伪造
+
+

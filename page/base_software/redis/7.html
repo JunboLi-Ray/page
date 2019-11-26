@@ -1,0 +1,13 @@
+redis支持geohash
+
+内部一个zset
+
+score是base32后的位置（52位）
+
+geohash
+geoadd
+geopos
+geodist
+
+
+如数据过多，不建议用集群部署，独立redis，或拆分国家等

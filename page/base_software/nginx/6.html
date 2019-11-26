@@ -1,0 +1,18 @@
+nginx
+
+时间缓存
+异步非阻塞
+
+server_tokens off;不显示版本
+
+accept_mutex 默认开启，有序处理请求，防惊群
+
+sendfile on默认false，开启网络io传播过程没有用户
+硬盘-》内核-》用户-》内核套接字-》协议栈
+
+limit_req是或的关系，有一个就不下一个
+
+brust 跟防刷的rate共同决定了， 最多一次处理多少个请求。因为请求就是去桶里取票，有票的速度是rate。
+
+？？
+multi_accept 默认没开 接受多个链接

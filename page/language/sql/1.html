@@ -1,0 +1,46 @@
+内连接（inner join） min(m,n)
+
+select *
+from Student s
+inner join Course c
+on s.C_S_Id=c.C_Id
+
+
+
+
+外连接（outer join）
+
+左外连接（left join / left outer join）n
+select *
+from Student s
+left join Course c
+on s.C_S_Id=c.C_Id
+
+右外连接（right join / right outer join）m
+select *
+from Student s
+right join Course c
+on s.C_S_Id=c.C_Id
+
+全外连接（full join / full outer join）max(m,n)
+select *
+from Student s
+full join Course c
+on s.C_S_Id=c.C_Id
+
+交叉连接（cross join）只能用where， 因为是n*m，不建议（要先生成行数乘积的数据表）
+select *
+from Student s
+cross join Course c
+
+内连接如果没有指定连接条件的话，和笛卡尔积的交叉连接结果一样
+不同于笛卡尔积的地方是，没有笛卡尔积要先生成行数乘积的数据表
+内连接的效率要高于笛卡尔积的交叉连接
+
+
+
+
+
+自连接（cross join）m*n过滤条件
+select *
+from Student s1， Student s2  （可以一样）

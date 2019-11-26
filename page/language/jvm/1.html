@@ -1,0 +1,4 @@
+Tlab（Thread Local Allocation Buffer），防止堆分配对象时并发
+
+每个线程分配一段空间用于分配对象，用完再申请，需要并发控制cas
+只分配独享，且新生代

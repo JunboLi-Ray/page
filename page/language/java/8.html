@@ -1,0 +1,9 @@
+引用
+
+强引用：一般的引用，不够就outMe。
+
+软引用：不够就删。初始化softReference在一个softReferencequeue，softReference引用一个对象，若这个对象被回收，softReference把自己引用到queue里，queue回收这个reference。
+
+弱引用：看见就删，但gc优先级低，不会很及时删掉。WeakHashMap，可用来存弱引用。自带引用队列，用来删除已经失效的value。
+
+虚引用：没引一样。必须使用引用队列，因为所指向对象就是null，用来跟踪对象被垃圾回收的活动。在finalize方法之后执行，不会出现又转为强引用的情况。

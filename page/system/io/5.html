@@ -1,0 +1,10 @@
+服务端：
+启动两个线程组NioEventLoopGroup，分别接收请求和处理内部事项。
+主为NioServerSocketChannel的channel，pipeline不设置handler（在子设置）。
+各链路子为NioSocketChannel，pipeline设置相应handler。
+启动的时候，只注册，不监听任何，在初始化NioServerSocketChannel对象的时候，进行监听项的设置。
+
+客户端：
+启动一个线程组。
+channel。
+handler。

@@ -1,0 +1,9 @@
+分区，减少查询范围，在目录下建立文件夹（嵌套）
+
+INSERT OVERWRITE TABLE backend.daily_growth_ab_user partition (dt=’2019-01-01’)
+SELECT
+user_id,
+group_name,
+ab_group_id
+FROM
+all_growth_ab_user;

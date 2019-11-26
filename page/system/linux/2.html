@@ -1,0 +1,12 @@
+Numa非统一内存访问架构
+Non-uniform memory access
+http://cenalulu.github.io/linux/numa/
+
+
+MESI协议和RFO请求：
+Cpu缓存的处理方式
+https://www.cnblogs.com/cyfonly/p/5800758.html
+
+伪共享(false sharing)：
+无声的性能杀手
+因为两个线程（内核），修改虽然是两个变量，但是却为同一个缓存行，轮番发送RFO请求导致慢

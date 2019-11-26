@@ -1,0 +1,17 @@
+spring启动过程：
+先new一个classpathresource，参数是xml路径。多了一些判断资源是否打开，是否可用，描述的函数。
+传给xmlbeanfactory，其内部两部分一个阅读资源的reader和处理bean的beanfactory，先传给reader进一步处理资源。编码，获取inputstream构造inpitsource。
+传给核心处理xml方法doloadbeandefinations，先获取xml文件验证模式，是dtd还是xsd，再加载xml获取document，最后通过document注册bean。
+解析document有默认标签和自定义标签。一、默认标签里主要是bean标签（import、alias、beans）。步骤
+1、解析标签属性
+2、解析子节点自定义属性
+3、注册解析后的beanholder
+4、通知监听器。
+二、自定义标签。
+
+
+做事的都是do……，不带的都是准备工作。
+
+加载bean
+解决循环依赖
+

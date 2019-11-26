@@ -1,0 +1,21 @@
+类加载器
+
+findclass加载并返回类
+loadclass双亲委派模型查找并调用findclass
+
+不能重复加载，重复调用findclass异常
+自己写的类加载器加载自己的类，自己的类在classpath下会被appclassloader加载
+
+spi：线程上下文加载器，root加载器在调用实现时,用线程上下文加载器去加载实现类并调用。
+
+热替换；每个jsp一个加载器，替换的时候新建类加载器加载类。
+
+加载器
+bootstrap classloader，c++实现不可java引用。/lib
+extension classloader ，/lib/ext。
+application cl，默认返回。
+
+
+双亲委派，调用父类的加载器。
+但若父类加载的类调用子加载器加载的类，则用线程上下文类加载器。
+web类加载特殊，web每个应用有自己的类加载器。先看自己能不能加载，再给父类。保证每个应用的类加载器优先级最高。

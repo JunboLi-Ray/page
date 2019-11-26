@@ -1,0 +1,37 @@
+查看所有分支情况
+git branch -a
+
+删远端分支
+git push origin --delete remote_branch
+
+删本地
+git branch -D br
+
+删除本地有，远端不存在的分支
+git remote prune origin
+
+查看本地的修改状态
+git status
+
+查看所有提交历史(由近到远，可用git cat-file指令看某次提交的详细信息）
+git log
+
+看操作日志
+git reflog
+
+取消add的文件
+git rm --cached
+
+git rebase -i 去除多次commit
+把要合并的提交的pick改为squash或s，一般除了最上面的不改后面都改
+
+
+合并错了分支且提交了：
+
+1、切换到有问题的分支后，将本地目前分支指向之前的commit，hash值，可以在git log里找到
+
+git reset --hard hash值
+
+2、强制push本地修改，正常push会提示有更新
+
+git push -f
