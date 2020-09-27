@@ -1,30 +1,57 @@
-## Welcome to Ray's Pages
+# Ant Design Pro
 
-个人工作笔记
+This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
 
-    关键的总是那么几句话
+## Environment Prepare
 
-    个人理解方式记录
-    
-    目录就是代码文件
+Install `node_modules`:
 
-首页：https://junboli-ray.github.io/page/index.html
+```bash
+npm install
+```
 
-### 内容
+or
 
-- 基础软件：常使用的工具的个人理解，如：redis、sql、zookeeper
-- 系统：linux的相关概念、IO、并发
-- 语言：java、golang等笔记
-- 网络及安全：协议、安全、vpn
-- 开发工具：mac操作、软件、网站
-- 其它：偶尔了解到的技术记录、问题
+```bash
+yarn
+```
 
-### PS
+## Provided Scripts
 
-东西总忘，不得不记
+Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
 
-不喜欢记录大量文字，关键的总是那么几句话
+Scripts provided in `package.json`. It's safe to modify or add additional script:
 
-不断更新，工作内容没有
+### Start project
 
-内容有些"难看"，慢慢搞
+```bash
+npm start
+```
+
+### Build project
+
+```bash
+npm run build
+```
+
+### Check code style
+
+```bash
+npm run lint
+```
+
+You can also use script to auto fix some lint error:
+
+```bash
+npm run lint:fix
+```
+
+### Test code
+
+```bash
+npm test
+```
+
+## More
+
+You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro).
